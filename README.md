@@ -11,7 +11,7 @@ It proposes an access control protocol for blockcahin interoperations
 ## Main Software Pre-requisites
 - **Install Docker (24.0.7) :** Please refer https://docs.docker.com/engine/install/
 - **Install Hyperledger Fabric Samples (2.4.9) :** Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html
-- **Install Hyperledger Cacti :Please refer https://hyperledger-cacti.github.io/cacti/weaver/getting-started/guide/  
+- **Install Hyperledger Cacti :** Please refer https://hyperledger-cacti.github.io/cacti/weaver/getting-started/guide/  
 - **Install Go Language (1.19.6):** Please refer https://go.dev/dl/ 
 - **Install Node JS (16.20.0):** Please refer https://nodejs.org/en
 - **Install Protobuf-compiler (3.15.6):** Please refer https://github.com/protocolbuffers/protobuf/releases/
