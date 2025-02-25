@@ -4,18 +4,14 @@ Interoperable Access Control
 
 It proposes an access control protocol for blockcahin interoperations
 
-# InterAcct - Blockchain Smart Contracts
+### 🏗 Core Contracts and Related Functionalities
 
-## 📜 Smart Contracts Overview
-This repository contains smart contracts for **InterAcct**, a blockchain-based interoperability solution.
-
-### 🏗 Smart Contract Structure
-
-| Core Functions| Description | Folder Path |
+| Functions| Description | Folder Path |
 |---------------------|-------------|------------|
 | **ManageAccessContol**  | The underlyinng chaincode creates and manages acl and verifying access  |`src/chaincode/access_setup/ManageAccessContol.go` |
 | **SubmitAccessRequest**   | Handles acess request creation, and saving of request details. | `src/chaincode/access_contol/SubmitAccessRequest.go` |
-| **RedactionContract** | Enables controlled redaction using Chameleon Hashes. | `chaincode/person_asset_chaincode/` |
+| **saveRequestPDC**   | Saving requestlist into private PDC store. | `src/chaincode/pdc_chaincode/saveRequestPDC.go` |
+| **VerifySignature** | Enables verification of ECDSA signatures for different entities | `app/handle-signature-app/server.js` |
 
 ### 📂 Folder Paths
 
