@@ -10,9 +10,8 @@ It proposes an access control protocol for blockcahin interoperations
 
 ## Prequisites
 
-- **Install Hyperledger Fabric Samples :
-- Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html  
-- **Memory:** 8 GB RAM  
+- **Install Hyperledger Fabric Samples :** Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html  
+  **Memory:** 8 GB RAM  
 - **Operating System:** Ubuntu 20.04 LTS (64-bit)  
 
    
