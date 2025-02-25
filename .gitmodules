@@ -3,4 +3,4 @@
 	url = https://github.com/hyperledger/fabric-samples.git
 [submodule "src/cacti"]
 	path = src/cacti
-	url = https://github.com/hyperledger/cacti.git
+	url = https://github.com/hyperledger-cacti/cacti.git
