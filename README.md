@@ -18,6 +18,21 @@ It proposes an access control protocol for blockcahin interoperations
 - **Install Protobuf-compiler (3.15.6):** Please refer https://github.com/protocolbuffers/protobuf/releases/
 
    
+# Multi Consortium Set Up:
+- **Docker Swarm Network Formation:** 
+ - docker swarm init : To initiate swarm network
+ - docker swarm join --token : To join a node to an existing swarm network
+
+ - **Overley Network:** 
+ - docker network create --attachable --driver overlay <NetworkName> : To create a docker overlay network between distinct machines/VMs
+
+ # Multi Consortium Set Up:
+- **Docker Swarm Network Formation:** 
+ - docker swarm init : To initiate swarm network
+ - docker swarm join --token : To join a node to an existing swarm network
+ - docker network create --attachable --driver overlay <NetworkName> : To create a docker overlay network between distinct machines/VMs
+
+
 
 
 # Core Contracts and Related Functionalities
@@ -30,3 +45,4 @@ It proposes an access control protocol for blockcahin interoperations
 | **CheckAccessResponder**   | Checks access valdation at destination | `src/chaincode/check_access_policy_dest/CheckaccessResponder.go` |
 | **SaveRequestPDC**   | Saving requestlist into private PDC store. | `src/chaincode/pdc_chaincode/saveRequestPDC.go` |
 | **VerifySignature** | Enables verification of ECDSA signatures for different entities | `app/handle-signature-app/server.js` |
+
