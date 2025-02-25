@@ -1,3 +1,6 @@
 [submodule "fabric_network/fabric-samples"]
 	path = fabric_network/fabric-samples
 	url = https://github.com/hyperledger/fabric-samples.git
+[submodule "src/cacti"]
+	path = src/cacti
+	url = https://github.com/hyperledger/cacti.git
