@@ -6,7 +6,16 @@ It proposes an access control protocol for blockcahin interoperations
 
 - **Processor:** Intel i5-4570 CPU  
 - **Memory:** 8 GB RAM  
+- **Operating System:** Ubuntu 20.04 LTS (64-bit)
+
+## Prequisites
+
+- **Install Hyperledger Fabric Samples :
+- Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html  
+- **Memory:** 8 GB RAM  
 - **Operating System:** Ubuntu 20.04 LTS (64-bit)  
+
+   
 
 
 # Core Contracts and Related Functionalities
