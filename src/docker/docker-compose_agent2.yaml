@@ -1,0 +1,44 @@
+version: "3"
+services:
+
+  agent-2:
+    image: bcgovimages/aries-cloudagent:py36-1.16-1_0.7.1
+    container_name: my-agent-2
+    environment:
+      ACAPY_ADMIN_INSECURE_MODE: "true"
+      ACAPY_AUTO_PROVISION: "true"
+      ACAPY_DEBUG_CONNECTIONS: "true"
+      ACAPY_ENDPOINT: "http://my-agent-2:11000"
+      ACAPY_LABEL: "Agent 2"
+      ACAPY_LOG_LEVEL: "info"
+      # ACAPY_NO_LEDGER: "true"
+      ADMIN_PORT: "11001"
+      AGENT_PORT: "11000"
+  
+    entrypoint: /bin/bash
+    command: ["-c",
+        "aca-py start \
+        --admin '0.0.0.0' 11001 \
+        --inbound-transport http '0.0.0.0' 11000 \
+        --outbound-transport http \
+        --genesis-url http://10.14.6.43:9000/genesis \
+        --webhook-url http://10.14.6.43:3000/webhooks \
+        --wallet-type indy \
+        --wallet-name Agent2 \
+        --wallet-key secret \
+        --auto-accept-invites \
+        --auto-accept-requests \
+        --auto-ping-connection \
+        --auto-respond-credential-offer \
+        --auto-respond-presentation-proposal \
+        --auto-respond-presentation-request \
+        --auto-verify-presentation \
+        --auto-respond-messages \
+        --replace-public-did \
+        --log-level debug \
+        --log-file aries.log "
+    ]
+    ports:
+      - "11001:11001"
+# --seed issuer00000000000000000000000000
+

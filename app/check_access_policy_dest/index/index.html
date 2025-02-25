@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Access</title>
+    <script>
+        async function fetchDetails() {
+            const requestId = document.getElementById('requestId').value;
+
+            const response = await fetch('/requests/fetch-details', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ requestId })
+            });
+
+            const result = await response.json();
+            document.getElementById('details').innerText = JSON.stringify(result, null, 2);
+        }
+
+        async function checkAccess() {
+            const requestId = document.getElementById('requestId').value;
+
+            const response = await fetch('/requests/check-access', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ requestId })
+            });
+
+            const result = await response.json();
+            alert(result.message);
+        }
+    </script>
+</head>
+<body>
+    <h1>Check Access</h1>
+    <input type="text" id="requestId" placeholder="Enter Request ID" />
+    <button onclick="fetchDetails()">Fetch Details</button>
+    <button onclick="checkAccess()">Check Access</button>
+
+    <h3>Details:</h3>
+    <pre id="details"></pre>
+</body>
+</html>

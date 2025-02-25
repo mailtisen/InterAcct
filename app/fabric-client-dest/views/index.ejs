@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Article Submission</title>
+</head>
+<body>
+    <h1>Submit Article</h1>
+    <form action="/submit" method="post">
+        <label for="id">Article ID:</label><br>
+        <input type="text" id="id" name="id"><br>
+        <label for="name">Article Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="url">Article URL:</label><br>
+        <input type="text" id="url" name="url"><br>
+        <label for="type">Article Type:</label><br>
+        <select id="type" name="type">
+            <option value="Journal">Journal</option>
+            <option value="Ebook">Ebook</option>
+            <option value="Conference">Conference</option>
+        </select><br><br>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </form>
+    <br>
+    <a href="/search"><button>Search Articles</button></a>
+</body>
+</html>
+
+

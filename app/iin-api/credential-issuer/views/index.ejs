@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Credential Issuer</title>
+</head>
+<body>
+    <h1>Enter Credential Details</h1>
+    <form action="/submit" method="post">
+        <label for="PersonId">Person ID:</label>
+        <input type="text" id="PersonId" name="PersonId" required><br><br>
+        
+        <label for="PersonName">Person Name:</label>
+        <input type="text" id="PersonName" name="PersonName" required><br><br>
+        
+        <label for="InstituteName">Institute Name:</label>
+        <select id="InstituteName" name="InstituteName" required>
+            <option value="IIT Kanpur">IIT Kanpur</option>
+            <option value="IIT Chennai">IIT Chennai</option>
+            <option value="IIT Bombay">IIT Bombay</option>
+            <option value="IIT Delhi">IIT Delhi</option>
+        </select><br><br>
+        
+        <label for="PersonType">Person Type:</label>
+        <select id="PersonType" name="PersonType" required>
+            <option value="Faculty">Faculty</option>
+            <option value="Student">Student</option>
+        </select><br><br>
+        
+        <label for="Department">Department:</label>
+        <input type="text" id="Department" name="Department" required><br><br>
+        
+        <label for="CourseProgram">Course Program:</label>
+        <select id="CourseProgram" name="CourseProgram" required>
+            <option value="BTech">BTech</option>
+            <option value="MTech">MTech</option>
+            <option value="PhD">PhD</option>
+        </select><br><br>
+        
+        <label for="CurrentYearofStudy">Current Year of Study:</label>
+        <select id="CurrentYearofStudy" name="CurrentYearofStudy" required>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="4th Year">4th Year</option>
+        </select><br><br>
+        
+        <label for="IdValiditytillYear">ID Validity till Year:</label>
+        <input type="text" id="IdValiditytillYear" name="IdValiditytillYear" required><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+

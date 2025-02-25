@@ -1,0 +1,167 @@
+<!-- 
+ /* Author    : mailtisen */
+ /* Created on: 2024 */
+ /* Purpose   : Access Control Management for Interoperable Blockchains */ 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Control</title>
+    <script>
+        // async function checkAccess() {
+        //     const requestData = gatherRequestData();
+
+        //     const response = await fetch('http://localhost:3000/check-access', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify(requestData)
+        //     });
+
+        //     const result = await response.json();
+        //     document.getElementById('result').innerText = `Access granted: ${result.accessGranted}`;
+        // }
+
+        async function checkAccess() {
+            const requestData = gatherRequestData();
+
+            const response = await fetch('http://localhost:3000/check-access', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            });
+
+            const result = await response.json();
+            
+            // Set the "Access granted" dropdown based on the result
+            if (result.accessGranted) {
+                document.getElementById('accessGranted').value = 'yes';
+                document.getElementById('result').innerText = 'Access granted: Yes';
+            } else {
+                document.getElementById('accessGranted').value = 'no';
+                document.getElementById('result').innerText = 'Access granted: No';
+            }
+        }
+
+        async function saveAccessRequest() {
+            const requestData = gatherRequestData();
+
+            const response = await fetch('http://localhost:3000/save-request', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerText = result.message;
+        }
+
+        function gatherRequestData() {
+            const requestID = document.getElementById('requestID').value;
+            const requesterName = document.getElementById('requesterName').value;
+            const organizationName = document.getElementById('organizationName').value;
+            const sourceNetworkID = document.getElementById('sourceNetworkID').value;
+            const destinationNetworkID = document.getElementById('destinationNetworkID').value;
+            const role = document.getElementById('role').value;
+            const requestType = document.getElementById('requestType').value;
+            const signed = document.getElementById('signed').value;
+            const accessGranted = document.getElementById('accessGranted').value;
+
+            return {
+                requestID,
+                requesterName,
+                organizationName,
+                sourceNetworkID,
+                destinationNetworkID,
+                role,
+                requestType,
+                signed,
+                accessGranted
+            };
+        }
+
+        async function viewRequests() {
+            const requestID = document.getElementById('requestID').value;
+
+            const response = await fetch('http://localhost:3000/view-requests', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ requestID })
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerText = JSON.stringify(result.requests, null, 2);
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Access Control Test</h1>
+    <form onsubmit="event.preventDefault();">
+        <label for="requestID">Request ID:</label>
+        <input type="text" id="requestID" required>
+        <br>
+
+        <label for="requesterName">Requester Name:</label>
+        <input type="text" id="requesterName" required>
+        <br>
+
+        <label for="organizationName">Organization Name:</label>
+        <input type="text" id="organizationName" required>
+        <br>
+
+        <label for="sourceNetworkID">Source Network ID:</label>
+        <input type="text" id="sourceNetworkID" required>
+        <br>
+
+        <label for="destinationNetworkID">Destination Network ID:</label>
+        <input type="text" id="destinationNetworkID" required>
+        <br>
+
+        <label for="role">Role:</label>
+        <select id="role" required>
+            <option value="Employee">Employee</option>
+            <option value="Directors of Organizations">Directors of Organizations</option>
+            <option value="Director">Director</option>
+        </select>
+        <br>
+
+        <label for="requestType">Request Type:</label>
+        <select id="requestType" required>
+            <option value="Individual Request">Individual Request</option>
+            <option value="Organization Request">Organization Request</option>
+            <option value="Joint Organization Request">Joint Organization Request</option>
+        </select>
+        <br>
+
+        <label for="signed">Signed:</label>
+        <select id="signed" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <br>
+
+        <label for="accessGranted">Access granted:</label>
+        <select id="accessGranted" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <br>
+
+        <button type="button" onclick="checkAccess()">Check Access</button>
+        <button type="button" onclick="saveAccessRequest()">Save Request Details</button>
+        <button type="button" onclick="viewRequests()">View Requests</button>
+    </form>
+
+    <div id="result" style="white-space: pre-wrap;"></div>
+</body>
+</html>

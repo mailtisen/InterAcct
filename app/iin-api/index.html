@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Page</title>
+</head>
+<body>
+    <button id="createInvitationBtn">Create Invitation</button>
+    <br><br>
+    <textarea id="responseTextArea" cols="50" rows="10" readonly></textarea>
+
+    <script>
+        const createInvitationBtn = document.getElementById('createInvitationBtn');
+        const responseTextArea = document.getElementById('responseTextArea');
+
+        createInvitationBtn.addEventListener('click', async () => {
+            try {
+                const response = await fetch('/createInvitation', { method: 'POST' });
+                const data = await response.text();
+                responseTextArea.value = data;
+            } catch (error) {
+                responseTextArea.value = 'Error: ' + error.message;
+            }
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Generation and Request Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 30%; /* Reduced width */
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-group button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Signature and Submit Request</h1>
+
+        <h2>Generate Org Head Signature</h2>
+        <div class="form-group">
+            <label for="requestId">Request ID:</label>
+            <input type="text" id="requestId" name="requestId" required>
+        </div>
+        <div class="form-group">
+            <label for="requesterName">Requester Name:</label>
+            <input type="text" id="requesterName" name="requesterName" required>
+        </div>
+        <div class="form-group">
+            <label for="organizationName">Organization Name:</label>
+            <input type="text" id="organizationName" name="organizationName" required>
+        </div>
+        <div class="form-group">
+            <label for="sourceNetworkId">Source Network ID:</label>
+            <input type="text" id="sourceNetworkId" name="sourceNetworkId" required>
+        </div>
+        <div class="form-group">
+            <label for="destinationNetworkId">Destination Network ID:</label>
+            <input type="text" id="destinationNetworkId" name="destinationNetworkId" required>
+        </div>
+        <div class="form-group">
+            <label for="role">Role:</label>
+            <input type="text" id="role" name="role" required>
+        </div>
+        <div class="form-group">
+            <label for="requestType">Request Type:</label>
+            <input type="text" id="requestType" name="requestType" required>
+        </div>
+        <div class="form-group">
+            <label for="objectRequested">Object Requested:</label>
+            <input type="text" id="objectRequested" name="objectRequested" required>
+        </div>
+        <div class="form-group">
+            <button id="generateOrgHeadSignature">Generate Org Head Signature</button>
+        </div>
+        <div class="form-group">
+            <label for="orgHeadSignature">Org Head Signature:</label>
+            <input type="text" id="orgHeadSignature" name="orgHeadSignature" readonly>
+        </div>
+
+        <h2>Generate Director Signature</h2>
+        <div class="form-group">
+            <button id="generateDirectorSignature">Generate Director Signature</button>
+        </div>
+        <div class="form-group">
+            <label for="directorSignature">Director Signature:</label>
+            <input type="text" id="directorSignature" name="directorSignature" readonly>
+        </div>
+
+        <h2>Submit Request</h2>
+        <div class="form-group">
+            <button id="submitRequest">Submit Request</button>
+        </div>
+
+        <div class="form-group">
+            <p id="responseMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

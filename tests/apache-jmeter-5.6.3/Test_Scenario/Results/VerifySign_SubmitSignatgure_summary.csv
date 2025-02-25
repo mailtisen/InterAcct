@@ -1,0 +1,4 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+InteropAccess_Test_VerifySignature_Request,10,5,1,39,11.25,0.000%,90.09009,353.06,13.28,4013.0
+InteropAccess_Test_SubmitSignature_Request,10,5,3,25,6.48,0.000%,88.49558,24.63,54.27,285.0
+TOTAL,20,5,1,39,9.18,0.000%,173.91304,364.98,66.15,2149.0

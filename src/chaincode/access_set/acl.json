@@ -1,0 +1,35 @@
+{
+  "rules": [
+    {
+      "role": "Employee",
+      "requestType": "Individual",
+      "condition": "Director Signature",
+      "allowed": true
+    },
+    {
+      "role": "Employee",
+      "requestType": "Individual",
+      "condition": "No Director Signature",
+      "allowed": false
+    },
+    {
+      "role": "Director",
+      "requestType": "Organization Level",
+      "condition": "Director",
+      "allowed": true
+    },
+    {
+      "role": "Directors",
+      "requestType": "Joint Organization",
+      "condition": "Both Director Signatures",
+      "allowed": true
+    },
+    {
+      "role": "Directors",
+      "requestType": "Joint Organization",
+      "condition": "Missing Director Signature",
+      "allowed": false
+    }
+  ]
+}
+

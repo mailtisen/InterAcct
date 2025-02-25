@@ -1,0 +1,4 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+VM4:Multiconsort_InteropAccess_Test_VerifyACLPolicy_Requester,120,293,57,503,160.85,0.000%,.00994,0.00,0.00,257.0
+VM3:Multiconsort_InteropAccess_Test_VerifyACLPolicy_Requester,120,357,60,604,187.85,0.000%,.00994,0.00,0.00,257.0
+TOTAL,240,325,57,604,177.80,0.000%,.01988,0.00,0.01,257.0
