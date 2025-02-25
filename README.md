@@ -2,11 +2,12 @@
 # InterAcct
 It proposes an access control protocol for blockcahin interoperations
 
-## Environment Setup
+## Our Environment Setup
 
 - **Processor:** Intel i5-4570 CPU  
 - **Memory:** 8 GB RAM  
 - **Operating System:** Ubuntu 20.04 LTS (64-bit)
+- **VM:** Oracle Virtual Box
 
 ## Main Software Pre-requisites
 - **Install Docker (24.0.7) :** Please refer https://docs.docker.com/engine/install/
