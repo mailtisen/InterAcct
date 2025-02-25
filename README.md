@@ -11,11 +11,10 @@ This repository contains smart contracts for **InterAcct**, a blockchain-based i
 
 ### 🏗 Smart Contract Structure
 
-| Smart Contract Name | Description | Folder Path |
+| Core Functions| Description | Folder Path |
 |---------------------|-------------|------------|
-| **ManageAccessContol**  | This chaincode creates and manages acl and verifying access  |
-`src/chaincode/access_setup/ManageAccessContol.go` |
-| **AssetContract**   | Handles asset creation, transfer, and ownership history tracking. | `chaincode/person_asset_chaincode/` |
+| **ManageAccessContol**  | The underlyinng chaincode creates and manages acl and verifying access  |`src/chaincode/access_setup/ManageAccessContol.go` |
+| **SubmitAccessRequest**   | Handles acess request creation, and saving of request details. | `src/chaincode/access_contol/SubmitAccessRequest.go` |
 | **RedactionContract** | Enables controlled redaction using Chameleon Hashes. | `chaincode/person_asset_chaincode/` |
 
 ### 📂 Folder Paths
