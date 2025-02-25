@@ -31,7 +31,7 @@ router.post('/check-access', async (req, res) => {
         const network = await gateway.getNetwork('mychannel');
         const contract = network.getContract('checkaccess');
 
-        const result = await contract.evaluateTransaction('CheckAccess', requestId);
+        const result = await contract.evaluateTransaction('checkAccessResponder', requestId);
 
         await gateway.disconnect();
         res.status(200).json({ message: result.toString() });

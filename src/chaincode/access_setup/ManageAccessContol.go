@@ -8,10 +8,10 @@ import (
 	"github.com/hyperledger/fabric-contract-api-go/contractapi"
 )
 
-//go:embed acl.json
+// embed json
 var aclFile embed.FS
 
-// Rule defines the structure for an access control rule
+// access control struct
 type Rule struct {
 	Role        string `json:"role"`
 	RequestType string `json:"requestType"`
@@ -19,12 +19,11 @@ type Rule struct {
 	Allowed     bool   `json:"allowed"`
 }
 
-// ACL contains a list of access control rules
+// ACL access control rules
 type ACL struct {
 	Rules []Rule `json:"rules"`
 }
 
-// SmartContract provides functions for managing access control
 type SmartContract struct {
 	contractapi.Contract
 }
@@ -37,13 +36,12 @@ func (s *SmartContract) CheckAccess(ctx contractapi.TransactionContextInterface,
 		return false, fmt.Errorf("failed to read ACL file: %w", err)
 	}
 
-	// Create an ACL object to hold the rules
 	var acl ACL
 
 	// Parse the JSON data into the ACL object
 	err = json.Unmarshal(fileData, &acl)
 	if err != nil {
-		return false, fmt.Errorf("failed to decode ACL file: %w", err)
+		return false, fmt.Errorf("failed to handle ACL file: %w", err)
 	}
 
 	// Check access based on rules

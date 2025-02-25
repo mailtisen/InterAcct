@@ -37,4 +37,7 @@ Run:
 git add README.md
 git commit -m "Updated README with Smart Contract details"
 git push origin main
+<<<<<<< HEAD
 
+=======
+>>>>>>> Updated project files

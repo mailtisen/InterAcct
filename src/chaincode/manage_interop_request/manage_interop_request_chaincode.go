@@ -45,8 +45,8 @@ func (s *SmartContract) SaveDetails(ctx contractapi.TransactionContextInterface,
 	return ctx.GetStub().PutState(credExID, requestAsBytes)
 }
 
-// QueryAllRecords retrieves all records from the ledger
-func (s *SmartContract) QueryAllRecords(ctx contractapi.TransactionContextInterface) ([]*InteropRequest, error) {
+// Extracts requests from the ledger
+func (s *SmartContract) extractAccessReuest(ctx contractapi.TransactionContextInterface) ([]*InteropRequest, error) {
 	queryString := "{\"selector\":{}}"
 
 	resultsIterator, err := ctx.GetStub().GetQueryResult(queryString)

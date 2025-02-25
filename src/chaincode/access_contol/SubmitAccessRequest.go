@@ -1,6 +1,6 @@
 /* Author    : mailtisen */
 /* Created on: 2024 */
-/* Purpose   : Access Control Management for Interoperable Blockchains */
+/* Purpose   : Access Control Request Saving for Interoperable Blockchains */
 
 package main
 
@@ -84,7 +84,7 @@ func (s *SmartContract) CheckAccess(ctx contractapi.TransactionContextInterface,
 	return false, nil
 }
 
-func (s *SmartContract) QueryRequestDetails(ctx contractapi.TransactionContextInterface, requestID string) ([]*RequestDetails, error) {
+func (s *SmartContract) extractAccessReuest(ctx contractapi.TransactionContextInterface, requestID string) ([]*RequestDetails, error) {
 	var results []*RequestDetails
 
 	if requestID != "" {

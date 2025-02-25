@@ -49,6 +49,14 @@ async function main() {
             res.render('search', { articles });
         });
 
+    
+        app.get('/checkaccess', async (req, res) => {
+            const result = await contract.evaluateTransaction('checkAccessResponder');
+            const articles = JSON.parse(result.toString());
+            res.render('search', { articles });
+        });
+        
+
         app.get('/articles', async (req, res) => {
             try {
                 const contract = await getContract();

@@ -169,7 +169,7 @@ app.post('/view-requests', async (req, res) => {
         // Log before submitting the query
         console.log('Querying request details...');
 
-        const result = await contract.evaluateTransaction('QueryRequestDetails', requestID);
+        const result = await contract.evaluateTransaction('extractAccessReuest', requestID);
 
         // Log the result from the chaincode
         console.log('Query result:', result.toString());
