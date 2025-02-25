@@ -8,11 +8,11 @@ It proposes an access control protocol for blockcahin interoperations
 - **Memory:** 8 GB RAM  
 - **Operating System:** Ubuntu 20.04 LTS (64-bit)
 
-## Main Software Prequisites
+## Main Software Pre-requisites
 
-**Install Hyperledger Fabric Samples (2.4.9) :** Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html  
-**Install Go Language (1.19.6):** Please refer https://go.dev/dl/ 
-**Install Node JS:** Please refer https://nodejs.org/en
+-**Install Hyperledger Fabric Samples (2.4.9) :** Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html  
+-**Install Go Language (1.19.6):** Please refer https://go.dev/dl/ 
+-**Install Node JS:** Please refer https://nodejs.org/en
 
    
 
