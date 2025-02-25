@@ -4,7 +4,7 @@ It proposes an access control protocol for blockcahin interoperations
 
 ## Our Environment Setup
 
-- **Processor:** Intel i5-4570 CPU  
+- **Processor:** Intel i5 CPU  
 - **Memory:** 8 GB RAM  
 - **Operating System:** Ubuntu 20.04 LTS (64-bit)
 - **VM:** Oracle Virtual Box
