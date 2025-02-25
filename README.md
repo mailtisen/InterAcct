@@ -9,10 +9,12 @@ It proposes an access control protocol for blockcahin interoperations
 - **Operating System:** Ubuntu 20.04 LTS (64-bit)
 
 ## Main Software Pre-requisites
-
-- **Install Hyperledger Fabric Samples (2.4.9) :** Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html  
+- **Install Docker (24.0.7) :** Please refer https://docs.docker.com/engine/install/
+- **Install Hyperledger Fabric Samples (2.4.9) :** Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html
+- **Install Hyperledger Cacti :Please refer https://hyperledger-cacti.github.io/cacti/weaver/getting-started/guide/  
 - **Install Go Language (1.19.6):** Please refer https://go.dev/dl/ 
-- **Install Node JS:** Please refer https://nodejs.org/en
+- **Install Node JS (16.20.0):** Please refer https://nodejs.org/en
+- **Install Protobuf-compiler (3.15.6):** Please refer https://github.com/protocolbuffers/protobuf/releases/
 
    
 
