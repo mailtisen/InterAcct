@@ -10,7 +10,7 @@ async function main() {
         // Load the network configuration
         //const ccpPath = path.resolve(__dirname, '..', 'fabric-samples', 'test-network', 'organizations', 'peerOrganizations', 'org1.example.com', 'connection-org1.json');
         const ccpPath = path.resolve(
-            '/home/user/Work_TS/aries_work/proj_fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com',
+            '//proj_fabric/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com',
             'connection-org1.json'
         );
         

@@ -1,8 +1,4 @@
 
- /* Author    : mailtisen */
- /* Created on: 2024 */
- /* Purpose   : Access Control Management for Interoperable Blockchains */ 
-
 
 const express = require('express');
 const { Gateway, Wallets } = require('fabric-network');
@@ -22,7 +18,7 @@ app.use(express.static('public'));
 async function connectToNetwork() {
     //const ccpPath = path.resolve(__dirname, 'connection-org1.json');
     const ccpPath = path.resolve(
-        '/home/user/Work_TS/fabric_network/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com',
+        '/fabric_network/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com',
         'connection-org1.json'
     );
     const ccp = JSON.parse(fs.readFileSync(ccpPath, 'utf8'));

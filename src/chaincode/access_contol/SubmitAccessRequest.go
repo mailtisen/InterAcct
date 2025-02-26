@@ -1,7 +1,3 @@
-/* Author    : mailtisen */
-/* Created on: 2024 */
-/* Purpose   : Access Control Request Saving for Interoperable Blockchains */
-
 package main
 
 import (

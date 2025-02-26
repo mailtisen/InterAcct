@@ -14,19 +14,19 @@
 2024-09-12 00:29:05,793 INFO o.a.j.JMeter: Available Processors =24
 2024-09-12 00:29:05,797 INFO o.a.j.JMeter: Default Locale=English (EN)
 2024-09-12 00:29:05,798 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
-2024-09-12 00:29:05,798 INFO o.a.j.JMeter: JMeterHome=/home/user/Work_TS/apache-jmeter-5.6.3
-2024-09-12 00:29:05,798 INFO o.a.j.JMeter: user.dir  =/home/user/Work_TS/apache-jmeter-5.6.3/bin
-2024-09-12 00:29:05,798 INFO o.a.j.JMeter: PWD       =/home/user/Work_TS/apache-jmeter-5.6.3/bin
+2024-09-12 00:29:05,798 INFO o.a.j.JMeter: JMeterHome=/apache-jmeter-5.6.3
+2024-09-12 00:29:05,798 INFO o.a.j.JMeter: user.dir  =/apache-jmeter-5.6.3/bin
+2024-09-12 00:29:05,798 INFO o.a.j.JMeter: PWD       =/apache-jmeter-5.6.3/bin
 2024-09-12 00:29:05,798 INFO o.a.j.JMeter: IP: 127.0.1.1 Name: kgpfabricadmin1 FullName: kgpfabricadmin1
 2024-09-12 00:29:05,803 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
 2024-09-12 00:29:06,078 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
-2024-09-12 00:29:40,746 INFO o.a.j.s.FileServer: Default base='/home/user/Work_TS/apache-jmeter-5.6.3/bin'
-2024-09-12 00:29:40,747 INFO o.a.j.g.a.Load: Loading file: /home/user/Work_TS/apache-jmeter-5.6.3/TS_Test/InterOpAccess_TestPan.jmx
-2024-09-12 00:29:40,748 INFO o.a.j.s.FileServer: Set new base='/home/user/Work_TS/apache-jmeter-5.6.3/TS_Test'
+2024-09-12 00:29:40,746 INFO o.a.j.s.FileServer: Default base='/apache-jmeter-5.6.3/bin'
+2024-09-12 00:29:40,747 INFO o.a.j.g.a.Load: Loading file: /apache-jmeter-5.6.3/TS_Test/InterOpAccess_TestPan.jmx
+2024-09-12 00:29:40,748 INFO o.a.j.s.FileServer: Set new base='/apache-jmeter-5.6.3/TS_Test'
 2024-09-12 00:29:40,827 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
 2024-09-12 00:29:40,832 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
 2024-09-12 00:29:40,833 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
-2024-09-12 00:29:40,833 INFO o.a.j.s.SaveService: Loading file: /home/user/Work_TS/apache-jmeter-5.6.3/TS_Test/InterOpAccess_TestPan.jmx
+2024-09-12 00:29:40,833 INFO o.a.j.s.SaveService: Loading file: /apache-jmeter-5.6.3/TS_Test/InterOpAccess_TestPan.jmx
 2024-09-12 00:29:40,846 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
 2024-09-12 00:29:40,846 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
 2024-09-12 00:29:40,846 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
@@ -37,7 +37,7 @@
 2024-09-12 00:29:40,954 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
 2024-09-12 00:29:40,954 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
 2024-09-12 00:29:40,954 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
-2024-09-12 00:29:41,039 INFO o.a.j.s.FileServer: Set new base='/home/user/Work_TS/apache-jmeter-5.6.3/TS_Test'
+2024-09-12 00:29:41,039 INFO o.a.j.s.FileServer: Set new base='/apache-jmeter-5.6.3/TS_Test'
 2024-09-12 00:43:48,319 INFO o.a.j.e.StandardJMeterEngine: Running the test!
 2024-09-12 00:43:48,320 INFO o.a.j.s.SampleEvent: List of sample_variables: []
 2024-09-12 00:43:48,320 INFO o.a.j.s.SampleEvent: List of sample_variables: []

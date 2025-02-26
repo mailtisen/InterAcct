@@ -327,7 +327,7 @@
               <connectTime>true</connectTime>
             </value>
           </objProp>
-          <stringProp name="filename">/home/user/Work_TS/apache-jmeter-5.6.3/TS_Test/ab.csv</stringProp>
+          <stringProp name="filename">/apache-jmeter-5.6.3/TS_Test/ab.csv</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>

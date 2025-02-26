@@ -1,8 +1,3 @@
-/*
-Author    : mailtisen
-Created on: 2024
-Purpose: App User Registration Access Control Management for Interoperable Blockchains 
-*/
 
 'use strict';
 const FabricCAServices = require('fabric-ca-client');
@@ -15,7 +10,7 @@ async function main() {
         // load the network configuration
 
         const ccpPath = path.resolve(
-            '/home/user/Work_TS/fabric_network/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com',
+            '/fabric_network/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com',
             'connection-org1.json'
         );
         
