@@ -1,13 +1,7 @@
 
 # InterAcct
-It proposes an access control protocol for blockcahin interoperations
+An access control framework and protocol for permissioned blockcahin interoperations
 
-## Our Environment Setup
-
-- **Processor:** Intel i5 CPU  
-- **Memory:** 8 GB RAM  
-- **Operating System:** Ubuntu 20.04 LTS (64-bit)
-- **VM:** Oracle Virtual Box
 
 ## Main Software Pre-requisites
 - **Install Docker (24.0.7) :** Please refer https://docs.docker.com/engine/install/
@@ -20,17 +14,17 @@ It proposes an access control protocol for blockcahin interoperations
    
 # Multi Consortium Set Up:
 - **Docker Swarm Network Formation:** 
- - docker swarm init : To initiate swarm network
- - docker swarm join --token : To join a node to an existing swarm network
+ - `docker swarm init` : To initiate swarm network
+ - `docker swarm join --token` : To join a node to an existing swarm network
 
  - **Overley Network:** 
  - docker network create --attachable --driver overlay <NetworkName> : To create a docker overlay network between distinct machines/VMs
 
  # Multi Consortium Set Up:
 - **Docker Swarm Network Formation:** 
- - docker swarm init : To initiate swarm network
- - docker swarm join --token : To join a node to an existing swarm network
- - docker network create --attachable --driver overlay <NetworkName> : To create a docker overlay network between distinct machines/VMs
+ - `docker swarm init` : To initiate swarm network
+ - `docker swarm join --token` : To join a node to an existing swarm network
+ - `docker network create --attachable --driver overlay <NetworkName>` : To create a docker overlay network between distinct machines/VMs
 
 
 
@@ -45,4 +39,13 @@ It proposes an access control protocol for blockcahin interoperations
 | **CheckAccessResponder**   | Checks access valdation at destination | `src/chaincode/check_access_policy_dest/CheckaccessResponder.go` |
 | **SaveRequestPDC**   | Saving requestlist into private PDC store. | `src/chaincode/pdc_chaincode/saveRequestPDC.go` |
 | **VerifySignature** | Enables verification of ECDSA signatures for different entities | `app/handle-signature-app/server.js` |
+
+
+
+## Our Environment Setup for Evaluation
+
+- **Processor:** Intel i5 CPU  
+- **Memory:** 8 GB RAM  
+- **Operating System:** Ubuntu 20.04 LTS (64-bit)
+- **VM:** Oracle Virtual Box
 
