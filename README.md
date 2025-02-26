@@ -3,6 +3,20 @@
 An access control framework and protocol for permissioned blockcahin interoperations
 
 
+
+# Core Contracts and Related Functionalities
+
+| Functions| Description | Folder Path |
+|---------------------|-------------|------------|
+| **ManageAccessContol**  | The underlyinng chaincode creates and manages acl and verifying access  |`src/chaincode/access_setup/ManageAccessContol.go` |
+| **SubmitAccessRequest**   | Handles acess request creation, and saving of request details. | `src/chaincode/access_contol/SubmitAccessRequest.go` |
+| **ManageInteropRequest**   | Extracts and Fetches acess request attributes from the interoperation payload| `src/chaincode/manage_interop_request/manage_interop_request_chaincode.go` |
+| **CheckAccessResponder**   | Checks access valdation at destination | `src/chaincode/check_access_policy_dest/CheckaccessResponder.go` |
+| **SaveRequestPDC**   | Saving requestlist into private PDC store. | `src/chaincode/pdc_chaincode/saveRequestPDC.go` |
+| **VerifySignature** | Enables verification of ECDSA signatures for different entities | `app/handle-signature-app/server.js` |
+
+
+
 ## Main Software Pre-requisites
 - **Install Docker (24.0.7) :** Please refer https://docs.docker.com/engine/install/
 - **Install Hyperledger Fabric Samples (2.4.9) :** Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html
@@ -25,21 +39,6 @@ An access control framework and protocol for permissioned blockcahin interoperat
  - `docker swarm init` : To initiate swarm network
  - `docker swarm join --token` : To join a node to an existing swarm network
  - `docker network create --attachable --driver overlay <NetworkName>` : To create a docker overlay network between distinct machines/VMs
-
-
-
-
-# Core Contracts and Related Functionalities
-
-| Functions| Description | Folder Path |
-|---------------------|-------------|------------|
-| **ManageAccessContol**  | The underlyinng chaincode creates and manages acl and verifying access  |`src/chaincode/access_setup/ManageAccessContol.go` |
-| **SubmitAccessRequest**   | Handles acess request creation, and saving of request details. | `src/chaincode/access_contol/SubmitAccessRequest.go` |
-| **ManageInteropRequest**   | Extracts and Fetches acess request attributes from the interoperation payload| `src/chaincode/manage_interop_request/manage_interop_request_chaincode.go` |
-| **CheckAccessResponder**   | Checks access valdation at destination | `src/chaincode/check_access_policy_dest/CheckaccessResponder.go` |
-| **SaveRequestPDC**   | Saving requestlist into private PDC store. | `src/chaincode/pdc_chaincode/saveRequestPDC.go` |
-| **VerifySignature** | Enables verification of ECDSA signatures for different entities | `app/handle-signature-app/server.js` |
-
 
 
 ## Our Environment Setup for Evaluation
