@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-const Agent1URL = "http://10.14.6.43:8001";
+const Agent1URL = "http://x.x.x.43:8001";
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,14 +16,14 @@ app.get('/', (req, res) => {
 
 app.post('/submit', async (req, res) => {
     try {
-        const connectionId = "26ff8ded-5706-4118-ab22-b2ef192e8e66"; // Hardcoded connection ID
+        const uni_id = "26ff8ded-5706-4118-ab22-b2ef192e8e66"; // Hardcoded connection ID
         
         const data = {
             auto_remove: true,
             comment: "string",
-            connection_id: connectionId,
-            credential_preview: {
-                "@type": "issue-credential/2.0/credential-preview",
+            uni_id: uni_id,
+           ploadpreview: {
+                "@type": "send/2.0/ploadpreview",
                 "attributes": [
                     { "name": "PersonId", "value": req.body.PersonId },
                     { "name": "PersonName", "value": req.body.PersonName },
@@ -48,7 +48,7 @@ app.post('/submit', async (req, res) => {
             trace: false
         };
 
-        await axios.post(`${Agent1URL}/issue-credential-2.0/send`, data);
+        await axios.post(`${Agent1URL}///send`, data);
         
         res.send('Credential Issued Successfully');
     } catch (error) {

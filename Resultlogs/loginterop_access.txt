@@ -126,7 +126,7 @@ Creating ca_org2    ... [32mdone[0m
 Creating ca_orderer ... [32mdone[0m
 [2B[0;34mCreating Org1 Identities[0m
 [0;34mEnrolling the CA admin[0m
-+ fabric-ca-client enroll -u https://admin:adminpw@localhost:7054 --caname ca-org1 --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org1/ca-cert.pem
++ fabric-ca-client enroll -u https://admin:masked@localhost:7054 --caname ca-org1 --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org1/ca-cert.pem
 2024/09/18 17:19:28 [INFO] Created a default configuration file at fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/fabric-ca-client-config.yaml
 2024/09/18 17:19:28 [INFO] TLS Enabled
 2024/09/18 17:19:28 [INFO] generating key: &{A:ecdsa S:256}
@@ -148,11 +148,11 @@ Password: peer0pw
 2024/09/18 17:19:28 [INFO] TLS Enabled
 Password: user1pw
 [0;34mRegistering the org admin[0m
-+ fabric-ca-client register --caname ca-org1 --id.name org1admin --id.secret org1adminpw --id.type admin --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org1/ca-cert.pem
++ fabric-ca-client register --caname ca-org1 --id.name org1admin --id.secret org1masked --id.type admin --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org1/ca-cert.pem
 2024/09/18 17:19:28 [INFO] Configuration file location: fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/fabric-ca-client-config.yaml
 2024/09/18 17:19:28 [INFO] TLS Enabled
 2024/09/18 17:19:28 [INFO] TLS Enabled
-Password: org1adminpw
+Password: org1masked
 [0;34mGenerating the peer0 msp[0m
 + fabric-ca-client enroll -u https://peer0:peer0pw@localhost:7054 --caname ca-org1 -M fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp --csr.hosts peer0.org1.example.com --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org1/ca-cert.pem
 2024/09/18 17:19:28 [INFO] TLS Enabled
@@ -181,7 +181,7 @@ Password: org1adminpw
 2024/09/18 17:19:29 [INFO] Stored Issuer public key at fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/IssuerPublicKey
 2024/09/18 17:19:29 [INFO] Stored Issuer revocation public key at fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/IssuerRevocationPublicKey
 [0;34mGenerating the org admin msp[0m
-+ fabric-ca-client enroll -u https://org1admin:org1adminpw@localhost:7054 --caname ca-org1 -M fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org1/ca-cert.pem
++ fabric-ca-client enroll -u https://org1admin:org1masked@localhost:7054 --caname ca-org1 -M fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org1/ca-cert.pem
 2024/09/18 17:19:29 [INFO] TLS Enabled
 2024/09/18 17:19:29 [INFO] generating key: &{A:ecdsa S:256}
 2024/09/18 17:19:29 [INFO] encoded CSR
@@ -191,7 +191,7 @@ Password: org1adminpw
 2024/09/18 17:19:29 [INFO] Stored Issuer revocation public key at fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/IssuerRevocationPublicKey
 [0;34mCreating Org2 Identities[0m
 [0;34mEnrolling the CA admin[0m
-+ fabric-ca-client enroll -u https://admin:adminpw@localhost:8054 --caname ca-org2 --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org2/ca-cert.pem
++ fabric-ca-client enroll -u https://admin:masked@localhost:8054 --caname ca-org2 --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org2/ca-cert.pem
 2024/09/18 17:19:29 [INFO] Created a default configuration file at fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/fabric-ca-client-config.yaml
 2024/09/18 17:19:29 [INFO] TLS Enabled
 2024/09/18 17:19:29 [INFO] generating key: &{A:ecdsa S:256}
@@ -213,11 +213,11 @@ Password: peer0pw
 2024/09/18 17:19:29 [INFO] TLS Enabled
 Password: user1pw
 [0;34mRegistering the org admin[0m
-+ fabric-ca-client register --caname ca-org2 --id.name org2admin --id.secret org2adminpw --id.type admin --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org2/ca-cert.pem
++ fabric-ca-client register --caname ca-org2 --id.name org2admin --id.secret org2masked --id.type admin --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org2/ca-cert.pem
 2024/09/18 17:19:29 [INFO] Configuration file location: fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/fabric-ca-client-config.yaml
 2024/09/18 17:19:29 [INFO] TLS Enabled
 2024/09/18 17:19:29 [INFO] TLS Enabled
-Password: org2adminpw
+Password: org2masked
 [0;34mGenerating the peer0 msp[0m
 + fabric-ca-client enroll -u https://peer0:peer0pw@localhost:8054 --caname ca-org2 -M fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp --csr.hosts peer0.org2.example.com --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org2/ca-cert.pem
 2024/09/18 17:19:29 [INFO] TLS Enabled
@@ -246,7 +246,7 @@ Password: org2adminpw
 2024/09/18 17:19:29 [INFO] Stored Issuer public key at fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/IssuerPublicKey
 2024/09/18 17:19:29 [INFO] Stored Issuer revocation public key at fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp/IssuerRevocationPublicKey
 [0;34mGenerating the org admin msp[0m
-+ fabric-ca-client enroll -u https://org2admin:org2adminpw@localhost:8054 --caname ca-org2 -M fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org2/ca-cert.pem
++ fabric-ca-client enroll -u https://org2admin:org2masked@localhost:8054 --caname ca-org2 -M fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/org2/ca-cert.pem
 2024/09/18 17:19:29 [INFO] TLS Enabled
 2024/09/18 17:19:29 [INFO] generating key: &{A:ecdsa S:256}
 2024/09/18 17:19:29 [INFO] encoded CSR
@@ -256,7 +256,7 @@ Password: org2adminpw
 2024/09/18 17:19:29 [INFO] Stored Issuer revocation public key at fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/IssuerRevocationPublicKey
 [0;34mCreating Orderer Org Identities[0m
 [0;34mEnrolling the CA admin[0m
-+ fabric-ca-client enroll -u https://admin:adminpw@localhost:9054 --caname ca-orderer --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/ordererOrg/ca-cert.pem
++ fabric-ca-client enroll -u https://admin:masked@localhost:9054 --caname ca-orderer --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/ordererOrg/ca-cert.pem
 2024/09/18 17:19:30 [INFO] Created a default configuration file at fabric-samples/test-network/organizations/ordererOrganizations/example.com/fabric-ca-client-config.yaml
 2024/09/18 17:19:30 [INFO] TLS Enabled
 2024/09/18 17:19:30 [INFO] generating key: &{A:ecdsa S:256}
@@ -272,11 +272,11 @@ Password: org2adminpw
 2024/09/18 17:19:30 [INFO] TLS Enabled
 Password: ordererpw
 [0;34mRegistering the orderer admin[0m
-+ fabric-ca-client register --caname ca-orderer --id.name ordererAdmin --id.secret ordererAdminpw --id.type admin --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/ordererOrg/ca-cert.pem
++ fabric-ca-client register --caname ca-orderer --id.name ordererAdmin --id.secret orderermasked --id.type admin --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/ordererOrg/ca-cert.pem
 2024/09/18 17:19:30 [INFO] Configuration file location: fabric-samples/test-network/organizations/ordererOrganizations/example.com/fabric-ca-client-config.yaml
 2024/09/18 17:19:30 [INFO] TLS Enabled
 2024/09/18 17:19:30 [INFO] TLS Enabled
-Password: ordererAdminpw
+Password: orderermasked
 [0;34mGenerating the orderer msp[0m
 + fabric-ca-client enroll -u https://orderer:ordererpw@localhost:9054 --caname ca-orderer -M fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp --csr.hosts orderer.example.com --csr.hosts localhost --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/ordererOrg/ca-cert.pem
 2024/09/18 17:19:30 [INFO] TLS Enabled
@@ -296,7 +296,7 @@ Password: ordererAdminpw
 2024/09/18 17:19:30 [INFO] Stored Issuer public key at fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/IssuerPublicKey
 2024/09/18 17:19:30 [INFO] Stored Issuer revocation public key at fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/IssuerRevocationPublicKey
 [0;34mGenerating the admin msp[0m
-+ fabric-ca-client enroll -u https://ordererAdmin:ordererAdminpw@localhost:9054 --caname ca-orderer -M fabric-samples/test-network/organizations/ordererOrganizations/example.com/users/Admin@example.com/msp --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/ordererOrg/ca-cert.pem
++ fabric-ca-client enroll -u https://ordererAdmin:orderermasked@localhost:9054 --caname ca-orderer -M fabric-samples/test-network/organizations/ordererOrganizations/example.com/users/Admin@example.com/msp --tls.certfiles fabric-samples/test-network/organizations/fabric-ca/ordererOrg/ca-cert.pem
 2024/09/18 17:19:30 [INFO] TLS Enabled
 2024/09/18 17:19:30 [INFO] generating key: &{A:ecdsa S:256}
 2024/09/18 17:19:30 [INFO] encoded CSR

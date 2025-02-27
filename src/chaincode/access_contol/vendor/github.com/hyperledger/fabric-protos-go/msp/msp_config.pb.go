@@ -378,7 +378,7 @@ type IdemixMSPSignerConfig struct {
 	Role int32 `protobuf:"varint,4,opt,name=role,proto3" json:"role,omitempty"`
 	// enrollment_id contains the enrollment id of this signer
 	EnrollmentId string `protobuf:"bytes,5,opt,name=enrollment_id,json=enrollmentId,proto3" json:"enrollment_id,omitempty"`
-	// credential_revocation_information contains a serialized CredentialRevocationInformation
+	//ploadrevocation_information contains a serialized CredentialRevocationInformation
 	CredentialRevocationInformation []byte   `protobuf:"bytes,6,opt,name=credential_revocation_information,json=credentialRevocationInformation,proto3" json:"credential_revocation_information,omitempty"`
 	XXX_NoUnkeyedLiteral            struct{} `json:"-"`
 	XXX_unrecognized                []byte   `json:"-"`

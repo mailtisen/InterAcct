@@ -39,7 +39,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="InteropAccess_ExtractAttibute_Destination" enabled="false">
-          <stringProp name="HTTPSampler.domain">10.14.6.44</stringProp>
+          <stringProp name="HTTPSampler.domain">x.x.x.44</stringProp>
           <stringProp name="HTTPSampler.port">5000</stringProp>
           <stringProp name="HTTPSampler.path">/fetch-data</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -191,7 +191,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="InteropAccess_Test_SaveAcccesRequest_Requester" enabled="false">
-          <stringProp name="HTTPSampler.domain">10.14.6.43</stringProp>
+          <stringProp name="HTTPSampler.domain">x.x.x.43</stringProp>
           <stringProp name="HTTPSampler.port">3000</stringProp>
           <stringProp name="HTTPSampler.path">/save-request</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -210,7 +210,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="InteropAccess_Test_SaveExtractedAcccesRequest_Responder" enabled="false">
-          <stringProp name="HTTPSampler.domain">10.14.6.44</stringProp>
+          <stringProp name="HTTPSampler.domain">x.x.x.44</stringProp>
           <stringProp name="HTTPSampler.port">5000</stringProp>
           <stringProp name="HTTPSampler.path">save-details</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -221,7 +221,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;cred_ex_id&quot;:&quot;ef541769-9d6e-48bf-b094-032f0d48dcaf&quot;,&quot;requester_name&quot;:&quot;TestEmp22&quot;,&quot;request_type&quot;:&quot;Individual&quot;,&quot;source_network_id&quot;:&quot;N1&quot;,&quot;object_requested&quot;:&quot;Articles&quot;,&quot;requester_approved&quot;:&quot;Yes&quot;,&quot;signed&quot;:&quot;Yes&quot;,&quot;destination_network_id&quot;:&quot;N2&quot;,&quot;request_id&quot;:&quot;11&quot;,&quot;state&quot;:&quot;credential-received&quot;,&quot;connection_id&quot;:&quot;d245111d-0cb3-43f5-9811-4625c339ddd6&quot;}</stringProp>
+                <stringProp name="Argument.value">{&quot;cred_ex_id&quot;:&quot;ef541769-9d6e-48bf-b094-032f0d48dcaf&quot;,&quot;requester_name&quot;:&quot;TestEmp22&quot;,&quot;request_type&quot;:&quot;Individual&quot;,&quot;source_network_id&quot;:&quot;N1&quot;,&quot;object_requested&quot;:&quot;Articles&quot;,&quot;requester_approved&quot;:&quot;Yes&quot;,&quot;signed&quot;:&quot;Yes&quot;,&quot;destination_network_id&quot;:&quot;N2&quot;,&quot;request_id&quot;:&quot;11&quot;,&quot;state&quot;:&quot;ploadreceived&quot;,&quot;uni_id&quot;:&quot;d245111d-0cb3-43f5-9811-4625c339ddd6&quot;}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -229,7 +229,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="InteropAccess_Test_Process_Identity_Middleware" enabled="false">
-          <stringProp name="HTTPSampler.domain">10.14.6.43</stringProp>
+          <stringProp name="HTTPSampler.domain">x.x.x.43</stringProp>
           <stringProp name="HTTPSampler.port">7000</stringProp>
           <stringProp name="HTTPSampler.path">/process-exchange</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -248,7 +248,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="InteropAccess_Test_Encryption_GenerateShares" enabled="false">
-          <stringProp name="HTTPSampler.domain">10.14.6.44</stringProp>
+          <stringProp name="HTTPSampler.domain">x.x.x.44</stringProp>
           <stringProp name="HTTPSampler.port">3000</stringProp>
           <stringProp name="HTTPSampler.path">/generate-shares</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -267,7 +267,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="InteropAccess_Test_Apply_Threshold_Encryption" enabled="false">
-          <stringProp name="HTTPSampler.domain">10.14.6.44</stringProp>
+          <stringProp name="HTTPSampler.domain">x.x.x.44</stringProp>
           <stringProp name="HTTPSampler.port">3000</stringProp>
           <stringProp name="HTTPSampler.path">/encrypt-payload</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>

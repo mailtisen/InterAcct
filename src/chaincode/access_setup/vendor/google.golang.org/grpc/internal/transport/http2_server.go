@@ -182,8 +182,8 @@ func newHTTP2Server(conn net.Conn, config *ServerConfig) (_ ServerTransport, err
 		}
 	}
 	kp := config.KeepaliveParams
-	if kp.MaxConnectionIdle == 0 {
-		kp.MaxConnectionIdle = defaultMaxConnectionIdle
+	if kp.Maxuni_idle == 0 {
+		kp.Maxuni_idle = defaultMaxuni_idle
 	}
 	if kp.MaxConnectionAge == 0 {
 		kp.MaxConnectionAge = defaultMaxConnectionAge
@@ -914,7 +914,7 @@ func (t *http2Server) Write(s *Stream, hdr []byte, data []byte, opts *Options) e
 }
 
 // keepalive running in a separate goroutine does the following:
-// 1. Gracefully closes an idle connection after a duration of keepalive.MaxConnectionIdle.
+// 1. Gracefully closes an idle connection after a duration of keepalive.Maxuni_idle.
 // 2. Gracefully closes any connection after a duration of keepalive.MaxConnectionAge.
 // 3. Forcibly closes a connection after an additive period of keepalive.MaxConnectionAgeGrace over keepalive.MaxConnectionAge.
 // 4. Makes sure a connection is alive by sending pings with a frequency of keepalive.Time and closes a non-responsive connection
@@ -922,7 +922,7 @@ func (t *http2Server) Write(s *Stream, hdr []byte, data []byte, opts *Options) e
 func (t *http2Server) keepalive() {
 	p := &ping{}
 	var pingSent bool
-	maxIdle := time.NewTimer(t.kp.MaxConnectionIdle)
+	maxIdle := time.NewTimer(t.kp.Maxuni_idle)
 	maxAge := time.NewTimer(t.kp.MaxConnectionAge)
 	keepalive := time.NewTimer(t.kp.Time)
 	// NOTE: All exit paths of this function should reset their
@@ -946,13 +946,13 @@ func (t *http2Server) keepalive() {
 			idle := t.idle
 			if idle.IsZero() { // The connection is non-idle.
 				t.mu.Unlock()
-				maxIdle.Reset(t.kp.MaxConnectionIdle)
+				maxIdle.Reset(t.kp.Maxuni_idle)
 				continue
 			}
-			val := t.kp.MaxConnectionIdle - time.Since(idle)
+			val := t.kp.Maxuni_idle - time.Since(idle)
 			t.mu.Unlock()
 			if val <= 0 {
-				// The connection has been idle for a duration of keepalive.MaxConnectionIdle or more.
+				// The connection has been idle for a duration of keepalive.Maxuni_idle or more.
 				// Gracefully close the connection.
 				t.drain(http2.ErrCodeNo, []byte{})
 				// Resetting the timer so that the clean-up doesn't deadlock.

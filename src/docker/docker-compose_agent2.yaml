@@ -21,15 +21,15 @@ services:
         --admin '0.0.0.0' 11001 \
         --inbound-transport http '0.0.0.0' 11000 \
         --outbound-transport http \
-        --genesis-url http://10.14.6.43:9000/genesis \
-        --webhook-url http://10.14.6.43:3000/webhooks \
+        --genesis-url http://x.x.x.43:9000/genesis \
+        --webhook-url http://x.x.x.43:3000/webhooks \
         --wallet-type indy \
         --wallet-name Agent2 \
         --wallet-key secret \
         --auto-accept-invites \
         --auto-accept-requests \
         --auto-ping-connection \
-        --auto-respond-credential-offer \
+        --auto-respond-ploadoffer \
         --auto-respond-presentation-proposal \
         --auto-respond-presentation-request \
         --auto-verify-presentation \

@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 async function createInvitation() {
-    const url = 'http://10.14.6.43:8001/connections/create-invitation';
+    const url = 'http://x.x.x.43:8001/';
     const requestBody = {};  // Assuming the request body is empty
 
     try {
@@ -20,22 +20,22 @@ async function createInvitation() {
 
             return response.data;
         } else {
-            console.error('Failed to create invitation:', response.status, response.statusText);
+            console.error('Failed to createsend:', response.status, response.statusText);
             return null;
         }
     } catch (error) {
-        console.error('Error creating invitation:', error);
+        console.error('Error creatingsend:', error);
         throw error;
     }
 }
 
 async function main() {
     try {
-        const invitationData = await createInvitation();
+        constsendData = await createInvitation();
         if (invitationData) {
-            console.log('Received Invitation Data:', invitationData);
+            console.log('Receivedsend Data:',sendData);
         } else {
-            console.error('Invalid invitation data received.');
+            console.error('Invalidsend data received.');
         }
     } catch (error) {
         console.error('Error in main function:', error);

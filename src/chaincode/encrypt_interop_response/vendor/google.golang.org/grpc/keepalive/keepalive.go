@@ -48,11 +48,11 @@ type ClientParameters struct {
 // ServerParameters is used to set keepalive and max-age parameters on the
 // server-side.
 type ServerParameters struct {
-	// MaxConnectionIdle is a duration for the amount of time after which an
+	// Maxuni_idle is a duration for the amount of time after which an
 	// idle connection would be closed by sending a GoAway. Idleness duration is
 	// defined since the most recent time the number of outstanding RPCs became
 	// zero or the connection establishment.
-	MaxConnectionIdle time.Duration // The current default value is infinity.
+	Maxuni_idle time.Duration // The current default value is infinity.
 	// MaxConnectionAge is a duration for the maximum amount of time a
 	// connection may exist before it will be closed by sending a GoAway. A
 	// random jitter of +/-10% will be added to MaxConnectionAge to spread out

@@ -57,7 +57,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="InteropAccess_Test_VerifyACLPolicy_Requester" enabled="true">
-          <stringProp name="HTTPSampler.domain">10.14.6.43</stringProp>
+          <stringProp name="HTTPSampler.domain">x.x.x.43</stringProp>
           <stringProp name="HTTPSampler.port">3000</stringProp>
           <stringProp name="HTTPSampler.path">/check-access</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -76,7 +76,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="InteropAccess_Test_SaveAcccesRequest_Requester" enabled="false">
-          <stringProp name="HTTPSampler.domain">10.14.6.43</stringProp>
+          <stringProp name="HTTPSampler.domain">x.x.x.43</stringProp>
           <stringProp name="HTTPSampler.port">3000</stringProp>
           <stringProp name="HTTPSampler.path">/save-request</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>

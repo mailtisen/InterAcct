@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EncryptResponseData</title>
+</head>
+<body>
+    <h1>Encryption Handling </h1>
+    <form id="encryptionForm">
+        <label>Request ID:</label>
+        <input type="text" id="requestId" required><br><br>
+
+        <label>Request Type:</label>
+        <select id="requestType">
+            <option value="single">Single</option>
+            <option value="joint">Joint</option>
+        </select><br><br>
+
+        <label>Requester(s) (comma-separated):</label>
+        <input type="text" id="requesters" required><br><br>
+
+        <label>Payload:</label>
+        <textarea id="payload" required></textarea><br><br>
+
+        <label>Key:</label>
+        <input type="text" id="key" required><br><br>
+
+        <label>No. of Shares:</label>
+        <input type="number" id="numShares" required><br><br>
+
+        <button type="button" onclick="generateShares()">Generate Shares</button>
+        <button type="button" onclick="encryptPayload()">Encrypt</button>
+        <button type="button" onclick="decryptPayload()">Decrypt</button>
+        <button type="button" onclick="saveToBlockchain()">Save to Blockchain</button>
+    </form>
+
+    <h2>Output</h2>
+    <div id="output"></div>
+
+    <script>
+        async function generateShares() {
+            const key = document.getElementById('key').value;
+            const numShares = parseInt(document.getElementById('numShares').value);
+            const response = await fetch('/generate-shares', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ key, numShares }),
+            });
+            const result = await response.json();
+            document.getElementById('output').innerHTML = `Shares: ${JSON.stringify(result.shares)}`;
+        }
+
+        async function encryptPayload() {
+            const requestType = document.getElementById('requestType').value;
+            const payload = document.getElementById('payload').value;
+            const response = await fetch('/encrypt-payload', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ requestType, payload }),
+            });
+            const result = await response.json();
+            document.getElementById('output').innerHTML += `<br>Encrypted Payload: ${result.encryptedPayload}`;
+        }
+
+        async function decryptPayload() {
+            const requestType = document.getElementById('requestType').value;
+            const sharesInput = document.getElementById('sharesInput').value;
+            const payload = document.getElementById('payload').value;
+
+            if (!payload) {
+                alert('Please provide payload.');
+                return;
+            }
+
+            let shares = [];
+            if (requestType === 'joint') {
+                if (!sharesInput) {
+                    alert('Please enter shares for joint request.');
+                    return;
+                }
+                shares = sharesInput.split(',');
+            } else if (requestType === 'single') {
+                shares = [document.getElementById('key').value];
+            }
+
+            const response = await fetch('/decrypt-payload', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ requestType, shares, payload })
+            });
+
+            const result = await response.json();
+            document.getElementById('output').innerHTML += `<br><strong>Decrypted Value:</strong> ${result.decryptedPayload}`;
+        }
+
+        async function saveToBlockchain() {
+            const requestId = document.getElementById('requestId').value;
+            const requestType = document.getElementById('requestType').value;
+            const requesters = document.getElementById('requesters').value.split(',');
+            const payload = document.getElementById('payload').value;
+            const response = await fetch('/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    requestId,
+                    requestType,
+                    requesters,
+                    encryptedPayload: payload,
+                }),
+            });
+            const result = await response.json();
+            alert(result.success ? 'Saved successfully!' : `Error: ${result.error}`);
+        }
+    </script>
+</body>
+</html>

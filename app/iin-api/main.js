@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 app.post('/createInvitation', async (req, res) => {
     try {
         // Make POST request to the specified URL
-        const response = await axios.post('http://10.14.6.43:12001/connections/create-invitation');
+        const response = await axios.post('http://x.x.x.43:12001/');
         
         // Send response back to the client
         res.send(response.data);

@@ -16,7 +16,7 @@ async function wait(ms) {
 }
 
 async function createInvitation() {
-    const url = 'http://10.14.6.43:8001/connections/create-invitation';
+    const url = 'http://x.x.x.43:8001/';
     const requestBody = {};  // Assuming the request body is empty
 
     try {
@@ -30,11 +30,11 @@ async function createInvitation() {
             console.log('Invitation created successfully:', response.data);
             return response.data;
         } else {
-            console.error('Failed to create invitation:', response.status, response.statusText);
+            console.error('Failed to createsend:', response.status, response.statusText);
             return null;
         }
     } catch (error) {
-        console.error('Error creating invitation:', error);
+        console.error('Error creatingsend:', error);
         throw error;
     }
 }
@@ -43,7 +43,7 @@ async function receiveInvitation(invitation) {
     const url = 'http://localhost:11001/connections/receive-invitation';
 
     try {
-        const response = await axios.post(url, invitation, {
+        const response = await axios.post(url,send, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -53,17 +53,17 @@ async function receiveInvitation(invitation) {
             console.log('Invitation accepted successfully:', response.data);
             return response.data;
         } else {
-            console.error('Failed to accept invitation:', response.status, response.statusText);
+            console.error('Failed to acceptsend:', response.status, response.statusText);
             return null;
         }
     } catch (error) {
-        console.error('Error accepting invitation:', error);
+        console.error('Error acceptingsend:', error);
         throw error;
     }
 }
 
-async function sendMessage(connectionId) {
-    const url = `http://10.14.6.43:11001/connections/${connectionId}/send-message`;
+async function sendMessage(uni_id) {
+    const url = `http://x.x.x.43:11001/connections/${uni_id}/send-message`;
     const requestBody = {
         content: "Hello I am 1m from Agent1 TSsss"
     };
@@ -88,14 +88,14 @@ async function sendMessage(connectionId) {
     }
 }
 
-async function issueCredential(connectionId, credentialAttributes) {
-    const url = 'http://10.14.6.43:8001/issue-credential-2.0/send';
+async function send(uni_id, credentialAttributes) {
+    const url = 'http://x.x.x.43:8001///send';
     const requestBody = {
         auto_remove: true,
         comment: "string",
-        connection_id: connectionId,
-        credential_preview: {
-            "@type": "issue-credential/2.0/credential-preview",
+        uni_id: uni_id,
+       ploadpreview: {
+            "@type": "send/2.0/ploadpreview",
             "attributes": credentialAttributes
         },
         filter: {
@@ -148,24 +148,24 @@ app.post('/submit', async (req, res) => {
     ];
 
     try {
-        const invitationData = await createInvitation();
-        if (invitationData && invitationData.invitation) {
-            const invitation = invitationData.invitation;
+        constsendData = await createInvitation();
+        if (invitationData &&sendData.invitation) {
+            constsend =sendData.invitation;
             const receivedData = await receiveInvitation(invitation);
 
-            // Adding a wait time between receiving invitation and sending a message
+            // Adding a wait time between receivingsend and sending a message
             await wait(2000); // wait for 2 seconds
 
-            if (receivedData && receivedData.connection_id) {
-                const connectionId = invitationData.connection_id;
-                const messageResponse = await sendMessage(connectionId);
+            if (receivedData && receivedData.uni_id) {
+                const uni_id =sendData.uni_id;
+                const messageResponse = await sendMessage(uni_id);
                 console.log('Received Data:', receivedData);
                 console.log('Message Response:', messageResponse);
 
                 // Adding a wait time between sending a message and issuing a credential
                 await wait(2000); // wait for 2 seconds
 
-                const credentialResponse = await issueCredential(connectionId, credentialAttributes);
+                const credentialResponse = await send(uni_id, credentialAttributes);
                 console.log('Credential Response:', credentialResponse);
 
                 res.status(200).send('Process completed successfully.');
@@ -174,8 +174,8 @@ app.post('/submit', async (req, res) => {
                 res.status(500).send('Invalid connection data received.');
             }
         } else {
-            console.error('Invalid invitation data received.');
-            res.status(500).send('Invalid invitation data received.');
+            console.error('Invalidsend data received.');
+            res.status(500).send('Invalidsend data received.');
         }
     } catch (error) {
         console.error('Error in processing:', error);
