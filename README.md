@@ -1,38 +1,6 @@
-
 # InterAcct
-It proposes an access control protocol for blockchain interoperations
+An access control framework and protocol for permissioned blockchain interoperations
 
-## Our Environment Setup
-
-- **Processor:** Intel i5 CPU  
-- **Memory:** 8 GB RAM  
-- **Operating System:** Ubuntu 20.04 LTS (64-bit)
-- **VM:** Oracle Virtual Box
-
-## Main Software Pre-requisites
-- **Install Docker (24.0.7) :** Please refer https://docs.docker.com/engine/install/
-- **Install Hyperledger Fabric Samples (2.4.9) :** Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html
-- **Install Hyperledger Cacti :** Please refer https://hyperledger-cacti.github.io/cacti/weaver/getting-started/guide/  
-- **Install Go Language (1.19.6):** Please refer https://go.dev/dl/ 
-- **Install Node JS (16.20.0):** Please refer https://nodejs.org/en
-- **Install Protobuf-compiler (3.15.6):** Please refer https://github.com/protocolbuffers/protobuf/releases/
-
-   
-# Multi Consortium Set Up:
- **Docker Swarm Network Formation:** 
-  - docker swarm init : To initiate swarm network
-  - docker swarm join --token : To join a node to an existing swarm network
-
-**Overley Network:** 
- - docker network create --attachable --driver overlay <NetworkName> : To create a docker overlay network between distinct machines/VMs
-
- # Interoperability Framework:
-**Clone Cacti:** 
- - git clone https://github.com/hyperledger-cacti/cacti.git : To copy cacti from github
-   
-**Build and Deploy Core Components:**    
- - Make and deploy Fabric Testnet : Please refer https://github.com/hyperledger-cacti/cacti/tree/main/weaver/tests/network-setups/fabric/dev 
- - Set up Docker based core components (Fabric Relay, Driver, IIN Agents) : Please refer https://github.com/hyperledger-cacti/cacti/tree/main/weaver/core
 
 
 # Core Contracts and Related Functionalities
@@ -45,3 +13,34 @@ It proposes an access control protocol for blockchain interoperations
 | **CheckAccessResponder**   | Checks access validation at destination | `src/chaincode/check_access_policy_dest/CheckaccessResponder.go` |
 | **SaveRequestPDC**   | Saving requestlist into private PDC store. | `src/chaincode/pdc_chaincode/saveRequestPDC.go` |
 | **VerifySignature** | Enables verification of ECDSA signatures for different entities | `app/handle-signature-app/server.js` |
+
+
+
+## Main Software Pre-requisites
+- **Install Docker (24.0.7) :** Please refer https://docs.docker.com/engine/install/
+- **Install Hyperledger Fabric Samples (2.4.9) :** Please refer https://hyperledger-fabric.readthedocs.io/en/latest/install.html
+- **Install Hyperledger Cacti :** Please refer https://hyperledger-cacti.github.io/cacti/weaver/getting-started/guide/  
+- **Install Go Language (1.19.6):** Please refer https://go.dev/dl/ 
+- **Install Node JS (16.20.0):** Please refer https://nodejs.org/en
+- **Install Protobuf-compiler (3.15.6):** Please refer https://github.com/protocolbuffers/protobuf/releases/
+
+   
+# Multi Consortium Set Up:
+- **Docker Swarm Network Formation:** 
+ - `docker swarm init` : To initiate swarm network
+ - `docker swarm join --token` : To join a node to an existing swarm network
+
+ - **Overley Network:** 
+ - docker network create --attachable --driver overlay &lt;NetworkName&gt; : To create a docker overlay network between distinct machines/VMs
+
+ # Interoperability Framework:
+**Clone Cacti:**
+ - git clone https://github.com/hyperledger-cacti/cacti.git : To copy cacti from github
+
+
+## Our Environment Setup for Evaluation
+
+- **Processor:** Intel i5 CPU  
+- **Memory:** 8 GB RAM  
+- **Operating System:** Ubuntu 20.04 LTS (64-bit)
+- **VM:** Oracle Virtual Box
