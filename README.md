@@ -45,7 +45,7 @@ An access control framework and protocol for permissioned blockchain interoperat
 - **Operating System:** Ubuntu 20.04 LTS (64-bit)
 - **VM:** Oracle Virtual Box
 
-  ## Citation
+## Citation
 
 If you use **InterAcct** in your academic research purposes, please cite it as follows:
 
