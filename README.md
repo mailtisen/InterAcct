@@ -44,3 +44,17 @@ An access control framework and protocol for permissioned blockchain interoperat
 - **Memory:** 8 GB RAM  
 - **Operating System:** Ubuntu 20.04 LTS (64-bit)
 - **VM:** Oracle Virtual Box
+
+  ## 📌 Citation
+
+If you use **InterAcct** in your research, please cite it as follows:
+
+```latex
+@misc{InterAcctImplement2025,
+  author = {Tirthankar Sengupta},
+  title = {InterAcct: Access Control for Permissioned Blockchain Interoperation},
+  year = {2024},
+  howpublished = {GitHub repository},
+  url = {https://github.com/mailtisen/InterAcct}
+}
+
