@@ -50,11 +50,11 @@ An access control framework and protocol for permissioned blockchain interoperat
 If you use **InterAcct** in your academic research purposes, please cite it as follows:
 
 ```latex
-@misc{InterAcctImplement2025,
-  author = {Tirthankar Sengupta},
-  title = {InterAcct: Access Control for Permissioned Blockchain Interoperation},
-  year = {2025},
-  howpublished = {GitHub repository},
-  url = {https://github.com/mailtisen/InterAcct}
-}
+@inproceedings{InterAcct2025,
+  title={InterAcct: Access Control for Permissioned Blockchain Interoperation},
+  author={Sengupta, Tirthankar and Ghosh, Bishakh Chandra, and Chakraborty, Sandip and Sural, Shamik},
+  booktitle={Proceedings of the IEEE International Conference on Blockchain and Cryptocurrency (ICBC)},
+  publisher={IEEE},
+  year={2025}
+  }
 
