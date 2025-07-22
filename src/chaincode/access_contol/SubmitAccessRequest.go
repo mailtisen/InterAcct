@@ -1,6 +1,8 @@
 package main
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 
@@ -122,6 +124,59 @@ func (s *SmartContract) extractAccessReuest(ctx contractapi.TransactionContextIn
 	}
 
 	return results, nil
+}
+func (s *SmartContract) consortiumACLValidation(ctx contractapi.TransactionContextInterface, requestJson string) (bool, error) {
+	var request RequestDetails
+	err := json.Unmarshal([]byte(requestJson), &request)
+	if err != nil {
+		return false, fmt.Errorf("failed to unmarshal request JSON: %s", err.Error())
+	}
+
+	if request.RequestType == "Organization Request" && request.Role == "Director" && request.Signed == "yes" {
+		return true, nil
+	}
+
+	if request.RequestType == "Joint Organization Request" && request.Role == "Directors of Organizations" && request.Signed == "yes" {
+		if len(request.Organizations) > 1 {
+			for _, org := range request.Organizations {
+				if !request.HasEndorsement(org) {
+					return false, nil
+				}
+			}
+			return true, nil
+		}
+	}
+
+	if request.RequestType == "Individual Request" && request.Role == "Employee" && request.Signed == "yes" {
+		return true, nil
+	}
+
+	return false, nil
+}
+func (s *SmartContract) SaveRequest(ctx contractapi.TransactionContextInterface, requestJson string) (string, error) {
+	var request RequestDetails
+	err := json.Unmarshal([]byte(requestJson), &request)
+	if err != nil {
+		return "", fmt.Errorf("failed to unmarshal request JSON: %s", err.Error())
+	}
+
+	hash := sha256.Sum256([]byte(request.SgValue))
+	hashHex := hex.EncodeToString(hash[:])
+	combined := request.Actor + "||" + hashHex
+	combinedKey := request.RequestID + "_sgn"
+
+	err = ctx.GetStub().PutState(combinedKey, []byte(combined))
+	if err != nil {
+		return "", fmt.Errorf("failed to save signature hash: %s", err.Error())
+	}
+
+	requestBytes, _ := json.Marshal(request)
+	err = ctx.GetStub().PutState(request.RequestID, requestBytes)
+	if err != nil {
+		return "", fmt.Errorf("failed to save request details: %s", err.Error())
+	}
+
+	return fmt.Sprintf("Request ID %s and actor signature been successfully saved.", request.RequestID), nil
 }
 
 func main() {
